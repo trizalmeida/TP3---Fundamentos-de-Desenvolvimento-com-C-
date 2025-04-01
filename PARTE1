@@ -1,0 +1,181 @@
+// Exercício 2: Criando a Classe "Ingresso"
+using System;
+
+class Ingresso
+{
+    public string nomeDoShow;
+    public double preco;
+    public int quantidadeDisponivel;
+}
+
+class Program
+{
+    static void Main()
+    {
+        Ingresso ingresso = new Ingresso();
+
+        ingresso.nomeDoShow = "Rock in Rio";
+        ingresso.preco = 250.0;
+        ingresso.quantidadeDisponivel = 1001;
+
+        Console.WriteLine($"Nome do Show: {ingresso.nomeDoShow}");
+        Console.WriteLine($"Preço: {ingresso.preco}");
+        Console.WriteLine($"Quantidade Disponível: {ingresso.quantidadeDisponivel}");
+    }
+}
+
+// Exercício 3: Métodos Básicos da Classe "Ingresso"
+using System;
+
+class Ingresso
+{
+    public string nomeDoShow;
+    public double preco;
+    public int quantidadeDisponivel;
+
+    public void AlterarPreco(double novoPreco)
+    {
+        preco = novoPreco;
+    }
+
+    public void AlterarQuantidade(int novaQuantidade)
+    {
+        quantidadeDisponivel = novaQuantidade;
+    }
+
+    public void ExibirInformacoes()
+    {
+        Console.WriteLine($"Nome do Show: {nomeDoShow}");
+        Console.WriteLine($"Preço: {preco}");
+        Console.WriteLine($"Quantidade Disponível: {quantidadeDisponivel}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Ingresso ingresso = new Ingresso();
+        ingresso.nomeDoShow = "Dua Lipa";
+        ingresso.preco = 150.0;
+        ingresso.quantidadeDisponivel = 500;
+
+        ingresso.ExibirInformacoes();
+
+        ingresso.AlterarPreco(180.0);
+        ingresso.AlterarQuantidade(450);
+
+        ingresso.ExibirInformacoes();
+    }
+}
+
+// Exercício 4: Testando a Classe "Ingresso"
+using System;
+
+class Ingresso
+{
+    public string nomeDoShow;
+    public double preco;
+    public int quantidadeDisponivel;
+
+    public void AlterarPreco(double novoPreco)
+    {
+        preco = novoPreco;
+    }
+
+    public void AlterarQuantidade(int novaQuantidade)
+    {
+        quantidadeDisponivel = novaQuantidade;
+    }
+
+    public void ExibirInformacoes()
+    {
+        Console.WriteLine($"Nome do Show: {nomeDoShow}");
+        Console.WriteLine($"Preço: {preco}");
+        Console.WriteLine($"Quantidade Disponível: {quantidadeDisponivel}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Ingresso ingresso = new Ingresso();
+        ingresso.nomeDoShow = "KISS";
+        ingresso.preco = 120.0;
+        ingresso.quantidadeDisponivel = 200;
+
+        ingresso.ExibirInformacoes();
+
+        ingresso.AlterarPreco(150.0);
+        ingresso.AlterarQuantidade(180);
+
+        ingresso.ExibirInformacoes();
+    }
+}
+
+// Exercício 5: Criando Métodos de Propriedade (Getters e Setters)
+using System;
+class Ingresso
+{
+    private string nomeDoShow;
+    private double preco;
+    private int quantidadeDisponivel;
+
+    public string GetNomeDoShow() => nomeDoShow;
+    public double GetPreco() => preco;
+    public int GetQuantidadeDisponivel() => quantidadeDisponivel;
+
+    public void SetNomeDoShow(string novoNome) => nomeDoShow = novoNome;
+    public void SetPreco(double novoPreco) => preco = novoPreco;
+    public void SetQuantidadeDisponivel(int novaQtd) => quantidadeDisponivel = novaQtd;
+}
+class Program
+{
+    static void Main()
+    {
+        Ingresso ingresso = new Ingresso();
+
+        ingresso.SetNomeDoShow("BEYONCÉ");
+        ingresso.SetPreco(180.0);
+        ingresso.SetQuantidadeDisponivel(300);
+
+        Console.WriteLine($"Nome do Show: {ingresso.GetNomeDoShow()}");
+        Console.WriteLine($"Preço: {ingresso.GetPreco()}");
+        Console.WriteLine($"Quantidade Disponível: {ingresso.GetQuantidadeDisponivel()}");
+    }
+}
+
+// Exercício 6: Adicionando Construtores à Classe "Ingresso"
+using System;
+
+class Ingresso
+{
+    public string nomeDoShow;
+    public double preco;
+    public int quantidadeDisponivel;
+
+    public Ingresso(string nome, double preco, int quantidade)
+    {
+        nomeDoShow = nome;
+        this.preco = preco;
+        quantidadeDisponivel = quantidade;
+    }
+
+    public void ExibirInformacoes()
+    {
+        Console.WriteLine($"Nome do Show: {nomeDoShow}");
+        Console.WriteLine($"Preço: {preco}");
+        Console.WriteLine($"Quantidade Disponível: {quantidadeDisponivel}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Ingresso ingresso = new Ingresso("Carnaval 2023", 250.0, 500);
+
+        ingresso.ExibirInformacoes();
+    }
+} 
