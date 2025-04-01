@@ -1,0 +1,133 @@
+// Exercício 7: Modelando uma Matrícula
+using System;
+
+class Matricula
+{
+    public string nomeDoAluno;
+    public string curso;
+    public int numeroMatricula;
+    public string situacao;
+    public string dataInicial;
+}
+
+class Program
+{
+    static void Main()
+    {
+        Matricula matricula = new Matricula();
+        matricula.nomeDoAluno = "Beatriz Almeida";
+        matricula.curso = "Análise e Desenvolvimento de Sistemas";
+        matricula.numeroMatricula = 12345;
+        matricula.situacao = "Ativa";
+        matricula.dataInicial = "01/02/2023";
+
+        Console.WriteLine($"Aluno: {matricula.nomeDoAluno}");
+        Console.WriteLine($"Curso: {matricula.curso}");
+        Console.WriteLine($"Número da Matrícula: {matricula.numeroMatricula}");
+        Console.WriteLine($"Situação: {matricula.situacao}");
+        Console.WriteLine($"Data Inicial: {matricula.dataInicial}");
+    }
+}
+
+// Exercício 8: Criando Métodos na Classe de Matrícula
+using System;
+
+class Matricula
+{
+    public string nomeDoAluno;
+    public string curso;
+    public int numeroMatricula;
+    public string situacao;
+    public string dataInicial;
+
+    public void Trancar()
+    {
+        situacao = "Trancada";
+    }
+
+    public void Reativar()
+    {
+        situacao = "Ativa";
+    }
+
+    public void ExibirInformacoes()
+    {
+        Console.WriteLine($"Aluno: {nomeDoAluno}");
+        Console.WriteLine($"Curso: {curso}");
+        Console.WriteLine($"Número da Matrícula: {numeroMatricula}");
+        Console.WriteLine($"Situação: {situacao}");
+        Console.WriteLine($"Data Inicial: {dataInicial}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Matricula matricula = new Matricula();
+        matricula.nomeDoAluno = "Beatriz Almeida";
+        matricula.curso = "Análise e Desenvolvimento de Sistemas";
+        matricula.numeroMatricula = 12345;
+        matricula.situacao = "Ativa";
+        matricula.dataInicial = "01/02/2023";
+
+        matricula.ExibirInformacoes();
+
+        matricula.Trancar();
+        Console.WriteLine("\nApós Trancar:");
+        matricula.ExibirInformacoes();
+
+        matricula.Reativar();
+        Console.WriteLine("\nApós Reativar:");
+        matricula.ExibirInformacoes();
+    }
+}
+
+// Exercício 9: Testando a Classe de Matrícula
+using System;
+public class Matricula
+{
+    public string NomeAluno { get; set; }
+    public string Curso { get; set; }
+    public int NumeroMatricula { get; set; }
+    public string DataInicial { get; set; }
+    public bool Ativa { get; private set; }
+
+    public Matricula(string nomeAluno, string curso, int numeroMatricula, string dataInicial)
+    {
+        NomeAluno = nomeAluno;
+        Curso = curso;
+        NumeroMatricula = numeroMatricula;
+        DataInicial = dataInicial;
+        Ativa = true;
+    }
+
+    public void Trancar()
+    {
+        Ativa = false;
+        Console.WriteLine("Matrícula trancada.");
+    }
+
+    public void Reativar()
+    {
+        Ativa = true;
+        Console.WriteLine("Matrícula reativada.");
+    }
+
+    public void ExibirInformacoes()
+    {
+        Console.WriteLine($"Nome: {NomeAluno}, Curso: {Curso}, Número: {NumeroMatricula}, Data Inicial: {DataInicial}, Ativa: {Ativa}");
+    }
+}
+public class TestaMatricula
+{
+    public static void Main()
+    {
+        Matricula matricula = new Matricula("Beatriz A.", "ADS", 12345, "01/03/2025");
+        matricula.ExibirInformacoes();
+        matricula.Trancar();
+        matricula.ExibirInformacoes();
+        matricula.Reativar();
+        matricula.ExibirInformacoes();
+    }
+}
